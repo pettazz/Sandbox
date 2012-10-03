@@ -10,6 +10,12 @@ from pygame.sprite import Sprite
 
 from assets.lib.euclid import *
 
+
+# Game parameters
+SCREEN_WIDTH, SCREEN_HEIGHT = 800, 600
+BG_COLOR = 150, 150, 80
+
+
 def load_image(name, colorkey=None, pngTransparency=None):
     fullname = os.path.join('assets/images/', name)
     try:
@@ -61,13 +67,13 @@ class Whitey(Sprite):
             if new_active_move_keys:
                 new_target = Vector2(self.pos.x, self.pos.y)
                 if K_w in new_active_move_keys:
-                    new_target.y = new_target.y + 600
+                    new_target.y = new_target.y + SCREEN_HEIGHT * 2
                 if K_s in new_active_move_keys:
-                    new_target.y = new_target.y - 600
+                    new_target.y = new_target.y - SCREEN_HEIGHT * 2
                 if K_a in new_active_move_keys:
-                    new_target.x = new_target.x + 600
+                    new_target.x = new_target.x + SCREEN_WIDTH * 2
                 if K_d in new_active_move_keys:
-                    new_target.x = new_target.x - 600
+                    new_target.x = new_target.x - SCREEN_WIDTH * 2
                 self.targets[new_active_move_keys[0]] = (new_target, 3)
         self.active_move_keys = current_move_keys
         print self.targets
@@ -106,7 +112,6 @@ class Whitey(Sprite):
             self.pos.x - self.image_w / 2, 
             self.pos.y - self.image_h / 2)
         self.screen.blit(self.image, draw_pos)
-        pygame.draw.line(self.screen, (0, 255, 0), (self.pos.x, self.pos.y), (0,0))
 
         #blit the debug target images
         for i in self.targets:
@@ -120,10 +125,6 @@ class Whitey(Sprite):
 
 
 def run_game():
-    # Game parameters
-    SCREEN_WIDTH, SCREEN_HEIGHT = 800, 600
-    BG_COLOR = 150, 150, 80
-
     pygame.init()
     screen = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT), 0, 32)
     clock = pygame.time.Clock()
