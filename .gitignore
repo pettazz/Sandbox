@@ -1,0 +1,8 @@
+
+*.pyc
+
+Somegame/.DS_Store
+
+Somegame/assets/.DS_Store
+
+Somegame/assets/lib/.DS_Store
