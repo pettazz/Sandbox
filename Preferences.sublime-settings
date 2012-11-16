@@ -1,0 +1,23 @@
+{
+	"bold_folder_labels": true,
+	"caret_style": "phase",
+	"color_scheme": "Packages/Color Scheme - Default/Close to the Sea.tmTheme",
+	"font_face": "Ubuntu Mono",
+	"font_options":
+	[
+		"subpixel_antialias"
+	],
+	"font_size": 12.5,
+	"highlight_line": true,
+	"ignored_packages":
+	[
+		"Vintage"
+	],
+	"scroll_past_end": true,
+	"show_full_path": true,
+	"sublimelinter": false,
+	"tab_ize": 4,
+	"translate_tabs_to_spaces": true,
+	"trim_trailing_white_space_on_save": false,
+	"use_tab_stops": true
+}
