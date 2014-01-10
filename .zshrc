@@ -41,13 +41,9 @@ export WORKON_HOME=$HOME/.virtualenvs/
 export PROJECT_HOME=$HOME/dev
 source /usr/local/bin/virtualenvwrapper.sh
 
-# JAVA
-export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.7.0_07.jdk/Contents/Home
-
-# Ant
-export ANT_HOME=/Library/apache-ant
-
-
+alias such=git
+alias very=git
+alias wow='git status' 
 
 export EDITOR='subl -w'
 export PATH=/bin:/sbin:/usr/bin:/usr/sbin:$HOME/bin:/opt/local/bin:/usr/local/bin:$HOME/Library/Mine/:ANT_HOME
