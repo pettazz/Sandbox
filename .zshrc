@@ -5,14 +5,18 @@ ZSH=$HOME/.oh-my-zsh
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
-ZSH_THEME="steeef"
+ZSH_THEME="powerlevel9k/powerlevel9k"
+#POWERLEVEL9K_MODE='awesome-patched'
+POWERLEVEL9K_PROMPT_ON_NEWLINE=true
+POWERLEVEL9K_MULTILINE_FIRST_PROMPT_PREFIX=" "
+POWERLEVEL9K_MULTILINE_SECOND_PROMPT_PREFIX="$ "
 
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
 # Disable hostname completion
-zstyle ':completion:*' hosts off
+zstyle -e ':completion:*' hosts /etc/empty-hosts
 
 # Set to this to use case-sensitive completion
 # CASE_SENSITIVE="true"
@@ -32,19 +36,13 @@ COMPLETION_WAITING_DOTS="true"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git svn lol pip django nyan python osx)
+plugins=(git python)
 
 source $ZSH/oh-my-zsh.sh
 
-# Python Virtualenv
-export WORKON_HOME=$HOME/.virtualenvs/
-export PROJECT_HOME=$HOME/dev
-source /usr/local/bin/virtualenvwrapper.sh
+export PATH=/usr/local/bin:/bin:/sbin:/usr/bin:/usr/sbin:$HOME/bin:/opt/local/bin
 
-alias such=git
-alias very=git
-alias wow='git status' 
+export EDITOR='emacs'
 
-export EDITOR='subl -w'
-export PATH=/bin:/sbin:/usr/bin:/usr/sbin:$HOME/bin:/opt/local/bin:/usr/local/bin:$HOME/Library/Mine/:ANT_HOME
+screenfetch
 
